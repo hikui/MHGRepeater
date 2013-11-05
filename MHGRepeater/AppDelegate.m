@@ -7,12 +7,20 @@
 //
 
 #import "AppDelegate.h"
+#import "FileListViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    FileListViewController *vc = [[FileListViewController alloc]initWithNibName:nil bundle:nil];
+    
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+    
+    self.window.rootViewController = nav;
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

@@ -19,6 +19,13 @@
 		EC4B8046182773D0005C15ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4B802E182773D0005C15ED /* UIKit.framework */; };
 		EC4B804E182773D0005C15ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC4B804C182773D0005C15ED /* InfoPlist.strings */; };
 		EC4B8050182773D0005C15ED /* MHGRepeaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4B804F182773D0005C15ED /* MHGRepeaterTests.m */; };
+		EC4B805C18277426005C15ED /* FileListViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = EC4B805918277426005C15ED /* FileListViewController.h */; };
+		EC4B805D18277426005C15ED /* FileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4B805A18277426005C15ED /* FileListViewController.m */; };
+		EC4B805E18277426005C15ED /* FileListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4B805B18277426005C15ED /* FileListViewController.xib */; };
+		EC4B806218277482005C15ED /* PlayerViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = EC4B805F18277482005C15ED /* PlayerViewController.h */; };
+		EC4B806318277482005C15ED /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4B806018277482005C15ED /* PlayerViewController.m */; };
+		EC4B806418277482005C15ED /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4B806118277482005C15ED /* PlayerViewController.xib */; };
+		EC66314A18278D6900285AB2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC66314918278D6900285AB2 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,9 +52,19 @@
 		EC4B803C182773D0005C15ED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC4B8042182773D0005C15ED /* MHGRepeaterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHGRepeaterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4B8043182773D0005C15ED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		EC4B804B182773D0005C15ED /* MHGRepeaterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MHGRepeaterTests-Info.plist"; sourceTree = "<group>"; };
 		EC4B804D182773D0005C15ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EC4B804F182773D0005C15ED /* MHGRepeaterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHGRepeaterTests.m; sourceTree = "<group>"; };
+		EC4B805918277426005C15ED /* FileListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = FileListViewController.h; sourceTree = "<group>"; };
+		EC4B805A18277426005C15ED /* FileListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileListViewController.m; sourceTree = "<group>"; };
+		EC4B805B18277426005C15ED /* FileListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileListViewController.xib; sourceTree = "<group>"; };
+		EC4B805F18277482005C15ED /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		EC4B806018277482005C15ED /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		EC4B806118277482005C15ED /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
+		EC4B80651827794E005C15ED /* COMMON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = COMMON.h; sourceTree = "<group>"; };
+		EC4B806818277FD6005C15ED /* MHGRepeater.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MHGRepeater.entitlements; sourceTree = "<group>"; };
+		EC4B806918278510005C15ED /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		EC4B806A18278510005C15ED /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		EC66314918278D6900285AB2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC66314A18278D6900285AB2 /* AVFoundation.framework in Frameworks */,
 				EC4B802D182773D0005C15ED /* CoreGraphics.framework in Frameworks */,
 				EC4B802F182773D0005C15ED /* UIKit.framework in Frameworks */,
 				EC4B802B182773D0005C15ED /* Foundation.framework in Frameworks */,
@@ -96,6 +114,7 @@
 		EC4B8029182773D0005C15ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC66314918278D6900285AB2 /* AVFoundation.framework */,
 				EC4B802A182773D0005C15ED /* Foundation.framework */,
 				EC4B802C182773D0005C15ED /* CoreGraphics.framework */,
 				EC4B802E182773D0005C15ED /* UIKit.framework */,
@@ -107,10 +126,18 @@
 		EC4B8030182773D0005C15ED /* MHGRepeater */ = {
 			isa = PBXGroup;
 			children = (
+				EC4B806818277FD6005C15ED /* MHGRepeater.entitlements */,
 				EC4B8039182773D0005C15ED /* AppDelegate.h */,
 				EC4B803A182773D0005C15ED /* AppDelegate.m */,
 				EC4B803C182773D0005C15ED /* Images.xcassets */,
 				EC4B8031182773D0005C15ED /* Supporting Files */,
+				EC4B805918277426005C15ED /* FileListViewController.h */,
+				EC4B805A18277426005C15ED /* FileListViewController.m */,
+				EC4B805B18277426005C15ED /* FileListViewController.xib */,
+				EC4B805F18277482005C15ED /* PlayerViewController.h */,
+				EC4B806018277482005C15ED /* PlayerViewController.m */,
+				EC4B806118277482005C15ED /* PlayerViewController.xib */,
+				EC4B80651827794E005C15ED /* COMMON.h */,
 			);
 			path = MHGRepeater;
 			sourceTree = "<group>";
@@ -138,7 +165,6 @@
 		EC4B804A182773D0005C15ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EC4B804B182773D0005C15ED /* MHGRepeaterTests-Info.plist */,
 				EC4B804C182773D0005C15ED /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -191,6 +217,14 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Hokuang;
 				TargetAttributes = {
+					EC4B8026182773D0005C15ED = {
+						DevelopmentTeam = 33998V4ZF9;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
+					};
 					EC4B8041182773D0005C15ED = {
 						TestTargetID = EC4B8026182773D0005C15ED;
 					};
@@ -202,6 +236,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = EC4B801E182773D0005C15ED;
 			productRefGroup = EC4B8028182773D0005C15ED /* Products */;
@@ -220,7 +255,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC4B8035182773D0005C15ED /* InfoPlist.strings in Resources */,
+				EC4B806418277482005C15ED /* PlayerViewController.xib in Resources */,
 				EC4B803D182773D0005C15ED /* Images.xcassets in Resources */,
+				EC4B805E18277426005C15ED /* FileListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +277,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC4B803B182773D0005C15ED /* AppDelegate.m in Sources */,
+				EC4B805C18277426005C15ED /* FileListViewController.h in Sources */,
+				EC4B805D18277426005C15ED /* FileListViewController.m in Sources */,
 				EC4B8037182773D0005C15ED /* main.m in Sources */,
+				EC4B806218277482005C15ED /* PlayerViewController.h in Sources */,
+				EC4B806318277482005C15ED /* PlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +308,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EC4B8034182773D0005C15ED /* en */,
+				EC4B806918278510005C15ED /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -275,6 +317,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EC4B804D182773D0005C15ED /* en */,
+				EC4B806A18278510005C15ED /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -359,10 +402,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHGRepeater/MHGRepeater-Prefix.pch";
 				INFOPLIST_FILE = "MHGRepeater/MHGRepeater-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -372,10 +418,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHGRepeater/MHGRepeater-Prefix.pch";
 				INFOPLIST_FILE = "MHGRepeater/MHGRepeater-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -441,6 +490,7 @@
 				EC4B8055182773D0005C15ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC4B8056182773D0005C15ED /* Build configuration list for PBXNativeTarget "MHGRepeaterTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +499,7 @@
 				EC4B8058182773D0005C15ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
