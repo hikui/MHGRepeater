@@ -7,6 +7,7 @@
 //
 
 #import "PlayerViewController.h"
+#import "NSString+AppExt.h"
 
 @interface PlayerViewController ()
 
@@ -50,7 +51,7 @@
     
     
     NSString *filePath = [NSString stringWithFormat:@"%@/%@",USER_DOCUMENT_PATH,self.fileName];
-    NSURL *audioURL = [NSURL URLWithString:filePath];
+    NSURL *audioURL = [NSURL URLWithString:[filePath URLEncoding]];
     NSError *error;
     self.player = [[AVAudioPlayer alloc]initWithContentsOfURL:audioURL error:&error];
     self.player.delegate = self;

@@ -26,6 +26,7 @@
 		EC4B806318277482005C15ED /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4B806018277482005C15ED /* PlayerViewController.m */; };
 		EC4B806418277482005C15ED /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4B806118277482005C15ED /* PlayerViewController.xib */; };
 		EC66314A18278D6900285AB2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC66314918278D6900285AB2 /* AVFoundation.framework */; };
+		EC663150182A0EBB00285AB2 /* NSString+AppExt.m in Sources */ = {isa = PBXBuildFile; fileRef = EC66314F182A0EBB00285AB2 /* NSString+AppExt.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		EC4B806918278510005C15ED /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		EC4B806A18278510005C15ED /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		EC66314918278D6900285AB2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EC66314E182A0EBB00285AB2 /* NSString+AppExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AppExt.h"; sourceTree = "<group>"; };
+		EC66314F182A0EBB00285AB2 /* NSString+AppExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AppExt.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,17 +129,13 @@
 		EC4B8030182773D0005C15ED /* MHGRepeater */ = {
 			isa = PBXGroup;
 			children = (
+				EC66314C182A0E2200285AB2 /* Categories */,
+				EC66314B182A0DFE00285AB2 /* ViewControllers */,
 				EC4B806818277FD6005C15ED /* MHGRepeater.entitlements */,
 				EC4B8039182773D0005C15ED /* AppDelegate.h */,
 				EC4B803A182773D0005C15ED /* AppDelegate.m */,
 				EC4B803C182773D0005C15ED /* Images.xcassets */,
 				EC4B8031182773D0005C15ED /* Supporting Files */,
-				EC4B805918277426005C15ED /* FileListViewController.h */,
-				EC4B805A18277426005C15ED /* FileListViewController.m */,
-				EC4B805B18277426005C15ED /* FileListViewController.xib */,
-				EC4B805F18277482005C15ED /* PlayerViewController.h */,
-				EC4B806018277482005C15ED /* PlayerViewController.m */,
-				EC4B806118277482005C15ED /* PlayerViewController.xib */,
 				EC4B80651827794E005C15ED /* COMMON.h */,
 			);
 			path = MHGRepeater;
@@ -168,6 +167,28 @@
 				EC4B804C182773D0005C15ED /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC66314B182A0DFE00285AB2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC4B805918277426005C15ED /* FileListViewController.h */,
+				EC4B805A18277426005C15ED /* FileListViewController.m */,
+				EC4B805B18277426005C15ED /* FileListViewController.xib */,
+				EC4B805F18277482005C15ED /* PlayerViewController.h */,
+				EC4B806018277482005C15ED /* PlayerViewController.m */,
+				EC4B806118277482005C15ED /* PlayerViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EC66314C182A0E2200285AB2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				EC66314E182A0EBB00285AB2 /* NSString+AppExt.h */,
+				EC66314F182A0EBB00285AB2 /* NSString+AppExt.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +300,7 @@
 				EC4B803B182773D0005C15ED /* AppDelegate.m in Sources */,
 				EC4B805C18277426005C15ED /* FileListViewController.h in Sources */,
 				EC4B805D18277426005C15ED /* FileListViewController.m in Sources */,
+				EC663150182A0EBB00285AB2 /* NSString+AppExt.m in Sources */,
 				EC4B8037182773D0005C15ED /* main.m in Sources */,
 				EC4B806218277482005C15ED /* PlayerViewController.h in Sources */,
 				EC4B806318277482005C15ED /* PlayerViewController.m in Sources */,
