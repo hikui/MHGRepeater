@@ -13,6 +13,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES]; //屏幕常亮
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     FileListViewController *vc = [[FileListViewController alloc]initWithNibName:nil bundle:nil];
