@@ -19,10 +19,8 @@
 		EC4B8046182773D0005C15ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4B802E182773D0005C15ED /* UIKit.framework */; };
 		EC4B804E182773D0005C15ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC4B804C182773D0005C15ED /* InfoPlist.strings */; };
 		EC4B8050182773D0005C15ED /* MHGRepeaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4B804F182773D0005C15ED /* MHGRepeaterTests.m */; };
-		EC4B805C18277426005C15ED /* FileListViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = EC4B805918277426005C15ED /* FileListViewController.h */; };
 		EC4B805D18277426005C15ED /* FileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4B805A18277426005C15ED /* FileListViewController.m */; };
 		EC4B805E18277426005C15ED /* FileListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4B805B18277426005C15ED /* FileListViewController.xib */; };
-		EC4B806218277482005C15ED /* PlayerViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = EC4B805F18277482005C15ED /* PlayerViewController.h */; };
 		EC4B806318277482005C15ED /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4B806018277482005C15ED /* PlayerViewController.m */; };
 		EC4B806418277482005C15ED /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4B806118277482005C15ED /* PlayerViewController.xib */; };
 		EC66314A18278D6900285AB2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC66314918278D6900285AB2 /* AVFoundation.framework */; };
@@ -172,12 +170,9 @@
 		EC66314B182A0DFE00285AB2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				EC4B805918277426005C15ED /* FileListViewController.h */,
-				EC4B805A18277426005C15ED /* FileListViewController.m */,
-				EC4B805B18277426005C15ED /* FileListViewController.xib */,
-				EC4B805F18277482005C15ED /* PlayerViewController.h */,
-				EC4B806018277482005C15ED /* PlayerViewController.m */,
-				EC4B806118277482005C15ED /* PlayerViewController.xib */,
+				EC663153182A0F9800285AB2 /* GuideViewController */,
+				EC663152182A0F8600285AB2 /* PlayerViewController */,
+				EC663151182A0F7500285AB2 /* FileListViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -189,6 +184,33 @@
 				EC66314F182A0EBB00285AB2 /* NSString+AppExt.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		EC663151182A0F7500285AB2 /* FileListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EC4B805918277426005C15ED /* FileListViewController.h */,
+				EC4B805A18277426005C15ED /* FileListViewController.m */,
+				EC4B805B18277426005C15ED /* FileListViewController.xib */,
+			);
+			name = FileListViewController;
+			sourceTree = "<group>";
+		};
+		EC663152182A0F8600285AB2 /* PlayerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EC4B805F18277482005C15ED /* PlayerViewController.h */,
+				EC4B806018277482005C15ED /* PlayerViewController.m */,
+				EC4B806118277482005C15ED /* PlayerViewController.xib */,
+			);
+			name = PlayerViewController;
+			sourceTree = "<group>";
+		};
+		EC663153182A0F9800285AB2 /* GuideViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GuideViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,11 +320,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC4B803B182773D0005C15ED /* AppDelegate.m in Sources */,
-				EC4B805C18277426005C15ED /* FileListViewController.h in Sources */,
 				EC4B805D18277426005C15ED /* FileListViewController.m in Sources */,
 				EC663150182A0EBB00285AB2 /* NSString+AppExt.m in Sources */,
 				EC4B8037182773D0005C15ED /* main.m in Sources */,
-				EC4B806218277482005C15ED /* PlayerViewController.h in Sources */,
 				EC4B806318277482005C15ED /* PlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

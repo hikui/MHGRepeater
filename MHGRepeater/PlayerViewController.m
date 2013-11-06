@@ -63,7 +63,9 @@
     self.progressSlider.maximumValue = self.player.duration;
     int totalMinutes = floor(self.player.duration/60);
     int totalSeconds = round(self.player.duration - totalMinutes * 60);
-    
+    if (totalSeconds >= 60) {
+        totalSeconds = 0;
+    }
     self.currentTimeLabel.text = @"0:00";
     self.totalTimeLabel.text = [NSString stringWithFormat:@"%d:%02d",totalMinutes,totalSeconds];
     
@@ -117,13 +119,23 @@
 - (IBAction)backwardButtonOnTouch:(id)sender
 {
     NSTimeInterval currentTime = self.player.currentTime - 1;
-    [self.player pause];
+    
+    BOOL isPlaying = self.player.isPlaying;
+    if (isPlaying) {
+        [self.player pause];
+    }
     if (currentTime < 0) {
         currentTime = 0;
     }
 	[self.player setCurrentTime:currentTime];
-	[self.player play];
     self.progressSlider.value = currentTime;
+    
+    if (isPlaying) {
+        [self.player play];
+    }
+    
+    [self updateSlider];
+    
 }
 - (IBAction)playButtonOnTouch:(id)sender
 {
@@ -138,9 +150,6 @@
         [self startPlay];
     }else{
         [self finishPlaying];
-//        if (!self.repeatStart) {
-//            self.repeatStartTime = self.progressSlider.value;
-//        }
     }
     
 }
@@ -150,6 +159,9 @@
     self.progressSlider.value = self.player.currentTime;
     int currMinutes = floor(self.player.currentTime/60);
     int currSeconds = round(self.player.currentTime - currMinutes * 60);
+    if (currSeconds >= 60) {
+        currSeconds = 0;
+    }
     self.currentTimeLabel.text = [NSString stringWithFormat:@"%d:%02d",currMinutes,currSeconds];
     if (self.repeatStart && self.progressSlider.value >= self.repeatEndTime) {
         [self finishPlaying];
