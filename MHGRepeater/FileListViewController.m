@@ -78,8 +78,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        cell.textLabel.text = self.fileList[indexPath.row];
     }
+    cell.textLabel.text = self.fileList[indexPath.row];
     
     return cell;
 }
