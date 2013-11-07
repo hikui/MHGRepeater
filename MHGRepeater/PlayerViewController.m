@@ -8,6 +8,7 @@
 
 #import "PlayerViewController.h"
 #import "NSString+AppExt.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface PlayerViewController ()
 
@@ -52,6 +53,11 @@
     
     NSString *filePath = [NSString stringWithFormat:@"%@/%@",USER_DOCUMENT_PATH,self.fileName];
     NSURL *audioURL = [NSURL URLWithString:[filePath URLEncoding]];
+    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[AVAudioSession sharedInstance] setActive: YES error: nil];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
     NSError *error;
     self.player = [[AVAudioPlayer alloc]initWithContentsOfURL:audioURL error:&error];
     self.player.delegate = self;
@@ -69,14 +75,13 @@
     self.currentTimeLabel.text = @"0:00";
     self.totalTimeLabel.text = [NSString stringWithFormat:@"%d:%02d",totalMinutes,totalSeconds];
     
-    
-    
     [self resetRepeatRange];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
     [self.player stop];
 }
 
@@ -129,6 +134,7 @@
     }
 	[self.player setCurrentTime:currentTime];
     self.progressSlider.value = currentTime;
+    [self updateMediaInfo];
     
     if (isPlaying) {
         [self.player play];
@@ -139,19 +145,7 @@
 }
 - (IBAction)playButtonOnTouch:(id)sender
 {
-    UIButton *playButton = (UIButton *)sender;
-    playButton.selected = !playButton.selected;
-    if (playButton.selected) {
-        if (self.repeatStart) {
-            if (self.progressSlider.value >= self.repeatEndTime) {
-                [self.player setCurrentTime:self.repeatStartTime];
-            }
-        }
-        [self startPlay];
-    }else{
-        [self finishPlaying];
-    }
-    
+    [self resumeOrPause];
 }
 
 - (void)updateSlider
@@ -173,6 +167,7 @@
     if ([self.player isPlaying]) {
         [self.player pause];
         [self.player setCurrentTime:sender.value];
+        [self updateMediaInfo];
         [self.player play];
     }else {
         [self.player setCurrentTime:sender.value];
@@ -186,13 +181,6 @@
 	}
 }
 
-- (void)finishPlaying
-{
-    [self.timer invalidate];
-    [self.player pause];
-    self.playButton.selected = NO;
-}
-
 - (void)resetRepeatRange
 {
     self.repeatStartTime = self.progressSlider.value;
@@ -203,6 +191,69 @@
 {
 	[self.player play];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateSlider) userInfo:nil repeats:YES];
+    self.playButton.selected = YES;
+}
+
+- (void)finishPlaying
+{
+    [self.timer invalidate];
+    [self.player pause];
+    self.playButton.selected = NO;
+}
+
+- (void)resumeOrPause
+{
+    if (!self.player.isPlaying) {
+        if (self.repeatStart) {
+            if (self.progressSlider.value >= self.repeatEndTime) {
+                [self.player setCurrentTime:self.repeatStartTime];
+            }
+        }
+        [self updateMediaInfo];
+        [self startPlay];
+    }else{
+        [self finishPlaying];
+    }
+}
+
+#pragma mark - remote
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event
+{
+	if (event.type == UIEventTypeRemoteControl) {
+        switch (event.subtype) {
+            case UIEventSubtypeRemoteControlTogglePlayPause:
+                [self resumeOrPause]; // 切换播放、暂停按钮
+                break;
+            case UIEventSubtypeRemoteControlPlay:
+                [self resumeOrPause];
+                break;
+            case UIEventSubtypeRemoteControlPause:
+                [self resumeOrPause];
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)updateMediaInfo
+{
+    [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nil;
+    Class playingInfoCenter = NSClassFromString(@"MPNowPlayingInfoCenter");
+    if (playingInfoCenter) {
+        NSMutableDictionary *songInfo = [ [NSMutableDictionary alloc] init];
+        [songInfo setObject:self.fileName forKey:MPMediaItemPropertyTitle];
+        [songInfo setObject:@(self.player.duration) forKey:MPMediaItemPropertyPlaybackDuration];
+        [songInfo setObject:@(self.player.currentTime) forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
+        [songInfo setObject:@(1.0) forKey:MPNowPlayingInfoPropertyPlaybackRate];
+        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo];
+        
+    }
 }
 
 @end

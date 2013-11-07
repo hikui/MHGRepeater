@@ -23,6 +23,7 @@
 		EC4B805E18277426005C15ED /* FileListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4B805B18277426005C15ED /* FileListViewController.xib */; };
 		EC4B806318277482005C15ED /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4B806018277482005C15ED /* PlayerViewController.m */; };
 		EC4B806418277482005C15ED /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4B806118277482005C15ED /* PlayerViewController.xib */; };
+		EC4C4D16182B345900C1DC23 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4C4D15182B345900C1DC23 /* MediaPlayer.framework */; };
 		EC66314A18278D6900285AB2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC66314918278D6900285AB2 /* AVFoundation.framework */; };
 		EC663150182A0EBB00285AB2 /* NSString+AppExt.m in Sources */ = {isa = PBXBuildFile; fileRef = EC66314F182A0EBB00285AB2 /* NSString+AppExt.m */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		EC4B806818277FD6005C15ED /* MHGRepeater.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MHGRepeater.entitlements; sourceTree = "<group>"; };
 		EC4B806918278510005C15ED /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		EC4B806A18278510005C15ED /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		EC4C4D15182B345900C1DC23 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		EC66314918278D6900285AB2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EC66314E182A0EBB00285AB2 /* NSString+AppExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AppExt.h"; sourceTree = "<group>"; };
 		EC66314F182A0EBB00285AB2 /* NSString+AppExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AppExt.m"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC4C4D16182B345900C1DC23 /* MediaPlayer.framework in Frameworks */,
 				EC66314A18278D6900285AB2 /* AVFoundation.framework in Frameworks */,
 				EC4B802D182773D0005C15ED /* CoreGraphics.framework in Frameworks */,
 				EC4B802F182773D0005C15ED /* UIKit.framework in Frameworks */,
@@ -115,6 +118,7 @@
 		EC4B8029182773D0005C15ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC4C4D15182B345900C1DC23 /* MediaPlayer.framework */,
 				EC66314918278D6900285AB2 /* AVFoundation.framework */,
 				EC4B802A182773D0005C15ED /* Foundation.framework */,
 				EC4B802C182773D0005C15ED /* CoreGraphics.framework */,
