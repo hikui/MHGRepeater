@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5E98ECEB1E7B749B00659356 /* GCDWebServers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E98ECE81E7B728400659356 /* GCDWebServers.framework */; };
 		5E98ECEC1E7B749B00659356 /* GCDWebServers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E98ECE81E7B728400659356 /* GCDWebServers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5E98ECEF1E7B753E00659356 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E98ECEE1E7B753E00659356 /* Launch Screen.storyboard */; };
+		5E98ECF41E7B75B600659356 /* WebImporterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98ECF21E7B75B600659356 /* WebImporterViewController.m */; };
+		5E98ECF51E7B75B600659356 /* WebImporterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E98ECF31E7B75B600659356 /* WebImporterViewController.xib */; };
 		EC4B802B182773D0005C15ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4B802A182773D0005C15ED /* Foundation.framework */; };
 		EC4B802D182773D0005C15ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4B802C182773D0005C15ED /* CoreGraphics.framework */; };
 		EC4B802F182773D0005C15ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4B802E182773D0005C15ED /* UIKit.framework */; };
@@ -56,6 +59,10 @@
 
 /* Begin PBXFileReference section */
 		5E98ECE81E7B728400659356 /* GCDWebServers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GCDWebServers.framework; path = Carthage/Build/iOS/GCDWebServers.framework; sourceTree = "<group>"; };
+		5E98ECEE1E7B753E00659356 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		5E98ECF11E7B75B600659356 /* WebImporterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebImporterViewController.h; sourceTree = "<group>"; };
+		5E98ECF21E7B75B600659356 /* WebImporterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebImporterViewController.m; sourceTree = "<group>"; };
+		5E98ECF31E7B75B600659356 /* WebImporterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebImporterViewController.xib; sourceTree = "<group>"; };
 		EC4B8027182773D0005C15ED /* MHGRepeater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MHGRepeater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4B802A182773D0005C15ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC4B802C182773D0005C15ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -114,6 +121,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E98ECF01E7B758800659356 /* WebImporterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5E98ECF11E7B75B600659356 /* WebImporterViewController.h */,
+				5E98ECF21E7B75B600659356 /* WebImporterViewController.m */,
+				5E98ECF31E7B75B600659356 /* WebImporterViewController.xib */,
+			);
+			name = WebImporterViewController;
+			sourceTree = "<group>";
+		};
 		EC4B801E182773D0005C15ED = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +175,7 @@
 				EC4B803C182773D0005C15ED /* Images.xcassets */,
 				EC4B8031182773D0005C15ED /* Supporting Files */,
 				EC4B80651827794E005C15ED /* COMMON.h */,
+				5E98ECEE1E7B753E00659356 /* Launch Screen.storyboard */,
 			);
 			path = MHGRepeater;
 			sourceTree = "<group>";
@@ -193,6 +211,7 @@
 		EC66314B182A0DFE00285AB2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5E98ECF01E7B758800659356 /* WebImporterViewController */,
 				EC663153182A0F9800285AB2 /* GuideViewController */,
 				EC663152182A0F8600285AB2 /* PlayerViewController */,
 				EC663151182A0F7500285AB2 /* FileListViewController */,
@@ -325,7 +344,9 @@
 				EC4B8035182773D0005C15ED /* InfoPlist.strings in Resources */,
 				EC4B806418277482005C15ED /* PlayerViewController.xib in Resources */,
 				EC4B803D182773D0005C15ED /* Images.xcassets in Resources */,
+				5E98ECEF1E7B753E00659356 /* Launch Screen.storyboard in Resources */,
 				EC4B805E18277426005C15ED /* FileListViewController.xib in Resources */,
+				5E98ECF51E7B75B600659356 /* WebImporterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +386,7 @@
 				EC4B803B182773D0005C15ED /* AppDelegate.m in Sources */,
 				EC4B805D18277426005C15ED /* FileListViewController.m in Sources */,
 				EC663150182A0EBB00285AB2 /* NSString+AppExt.m in Sources */,
+				5E98ECF41E7B75B600659356 /* WebImporterViewController.m in Sources */,
 				EC4B8037182773D0005C15ED /* main.m in Sources */,
 				EC4B806318277482005C15ED /* PlayerViewController.m in Sources */,
 			);
@@ -486,7 +508,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -507,7 +528,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

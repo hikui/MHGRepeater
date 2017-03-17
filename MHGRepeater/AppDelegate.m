@@ -9,14 +9,6 @@
 #import "AppDelegate.h"
 #import "FileListViewController.h"
 
-@import GCDWebServers;
-
-@interface AppDelegate ()
-
-@property (nonatomic, strong) GCDWebUploader *webUploader;
-
-@end
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -28,10 +20,6 @@
     FileListViewController *vc = [[FileListViewController alloc]initWithNibName:nil bundle:nil];
     
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
-
-    NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-    _webUploader = [[GCDWebUploader alloc] initWithUploadDirectory:documentsPath];
-    [_webUploader start];
     
     self.window.rootViewController = nav;
     

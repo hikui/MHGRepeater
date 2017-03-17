@@ -8,6 +8,7 @@
 
 #import "FileListViewController.h"
 #import "PlayerViewController.h"
+#import "WebImporterViewController.h"
 
 @interface FileListViewController ()
 
@@ -30,9 +31,9 @@
 {
     [super viewDidLoad];
     self.title = @"文件列表";
-    
+    UIBarButtonItem *addItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addFiles)];
     UIBarButtonItem *refreshItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(scanFiles)];
-    self.navigationItem.rightBarButtonItem = refreshItem;
+    self.navigationItem.rightBarButtonItems = @[refreshItem, addItem];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -60,6 +61,12 @@
     }
     
     [self.tableView reloadData];
+}
+
+- (void)addFiles
+{
+    WebImporterViewController *vc = [[WebImporterViewController alloc]initWithNibName:@"WebImporterViewController" bundle:nil];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
