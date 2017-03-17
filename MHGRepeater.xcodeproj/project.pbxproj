@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E98ECEB1E7B749B00659356 /* GCDWebServers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E98ECE81E7B728400659356 /* GCDWebServers.framework */; };
+		5E98ECEC1E7B749B00659356 /* GCDWebServers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E98ECE81E7B728400659356 /* GCDWebServers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC4B802B182773D0005C15ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4B802A182773D0005C15ED /* Foundation.framework */; };
 		EC4B802D182773D0005C15ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4B802C182773D0005C15ED /* CoreGraphics.framework */; };
 		EC4B802F182773D0005C15ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4B802E182773D0005C15ED /* UIKit.framework */; };
@@ -38,7 +40,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5E98ECED1E7B749B00659356 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5E98ECEC1E7B749B00659356 /* GCDWebServers.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		5E98ECE81E7B728400659356 /* GCDWebServers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GCDWebServers.framework; path = Carthage/Build/iOS/GCDWebServers.framework; sourceTree = "<group>"; };
 		EC4B8027182773D0005C15ED /* MHGRepeater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MHGRepeater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4B802A182773D0005C15ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC4B802C182773D0005C15ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E98ECEB1E7B749B00659356 /* GCDWebServers.framework in Frameworks */,
 				EC4C4D16182B345900C1DC23 /* MediaPlayer.framework in Frameworks */,
 				EC66314A18278D6900285AB2 /* AVFoundation.framework in Frameworks */,
 				EC4B802D182773D0005C15ED /* CoreGraphics.framework in Frameworks */,
@@ -118,6 +136,7 @@
 		EC4B8029182773D0005C15ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E98ECE81E7B728400659356 /* GCDWebServers.framework */,
 				EC4C4D15182B345900C1DC23 /* MediaPlayer.framework */,
 				EC66314918278D6900285AB2 /* AVFoundation.framework */,
 				EC4B802A182773D0005C15ED /* Foundation.framework */,
@@ -227,6 +246,8 @@
 				EC4B8023182773D0005C15ED /* Sources */,
 				EC4B8024182773D0005C15ED /* Frameworks */,
 				EC4B8025182773D0005C15ED /* Resources */,
+				5E98ECEA1E7B729D00659356 /* Carthage */,
+				5E98ECED1E7B749B00659356 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,6 +339,24 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5E98ECEA1E7B729D00659356 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/GCDWebServers.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EC4B8023182773D0005C15ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -404,7 +443,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -437,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -450,9 +489,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHGRepeater/MHGRepeater-Prefix.pch";
 				INFOPLIST_FILE = "MHGRepeater/MHGRepeater-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -466,9 +510,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHGRepeater/MHGRepeater-Prefix.pch";
 				INFOPLIST_FILE = "MHGRepeater/MHGRepeater-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
